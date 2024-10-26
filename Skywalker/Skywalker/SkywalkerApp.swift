@@ -12,6 +12,15 @@ struct SkywalkerApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+               .background(.black.opacity(0.8))
         }
+
+
+        ImmersiveSpace(id: "Immersive") {
+            ImmersiveView()
+        }
+//        WindowGroup {
+//            ContentView()
+//        }
     }
 }
