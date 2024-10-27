@@ -6,10 +6,24 @@
 //
 
 import SwiftUI
+import RealityKit
 
 struct ImmersiveView: View {
+    
+    private let url = URL(string: "https://developer.apple.com/augmented-reality/quick-look/models/teapot/teapot.usdz")!
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+            
+            Model3D(url: url) { model in
+                model.resizable().aspectRatio(contentMode: .fit).frame(width: 200, height: 200)
+            } placeholder: {
+                ProgressView()
+            }
+        }
+        .padding()
+        
     }
 }
 
